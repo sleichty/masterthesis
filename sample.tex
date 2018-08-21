@@ -66,6 +66,16 @@
 % book tables are simple and look nice
 \usepackage{booktabs}
 
+% define custom commands for creating references
+% for tables, figures, equations and such
+\usepackage{cite}
+\newcommand{\eref}[1]{\eqref{#1}}        % cite equation
+\newcommand{\fref}[1]{Figure~\ref{#1}}   % cite figure
+\newcommand{\cref}[1]{Chapter~\ref{#1}}  % cite chapter
+\newcommand{\sref}[1]{Section~\ref{#1}}  % cite section/sub(sub)section
+\newcommand{\aref}[1]{Appendix~\ref{#1}} % cite appendix
+\newcommand{\tref}[1]{Table~\ref{#1}}    % cite table
+
 % for specifying urls and links
 \usepackage{url}
 \urlstyle{same} % same style as regular text
@@ -438,6 +448,8 @@ Note that figures and tables do not have to be perfectly flush with the margins 
 \sloppy
 If you have a very long word that flows into the side margin,\footnote{this should generate an ``overfull hbox badness'' warning} you can typically correct the problem by applying the \textbf{\textbackslash sloppy} command to a single paragraph.  This will loosen the \LaTeX{} typesetting rules and allow the margin requirements to be met.  See this paragraph in the source of this document for an example.  Note that you should reverse the effects of sloppy using the \textbf{\textbackslash fussy} command at the end of the paragraph.  Using sloppy rules everywhere will lead to odd-looking spacing.
 \fussy
+
+If the sloppy approach does not work for you, consider manually entering a line break using \\\\ after the offending word or equation.
 
 \backmatter % starts unnumbered supplementary material
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
